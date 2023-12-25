@@ -1,0 +1,16 @@
+<!-- screensharing/templates/screensharing/screen_share.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Sharing</title>
+</head>
+<body>
+    <h1>Screen Sharing - Room {{ room_name }}</h1>
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+
+    <script src="https://cdn.simplewebrtc.com/latest-v3.js"></script>
+    <script src="{% static 'screensharing/js/screen_share.js' %}"></script>
+</body>
+</html>

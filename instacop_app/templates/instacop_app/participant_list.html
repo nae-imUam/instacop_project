@@ -1,0 +1,16 @@
+<!-- instacop_app/templates/instacop_app/participant_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participant List</title>
+</head>
+<body>
+    <h2>Participant List</h2>
+    <ul>
+        {% for participant in participants %}
+            <li>{{ participant.username }} - {{ participant.password }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_participant' %}">Add Participant</a>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!-- instacop_app/templates/instacop_app/add_participant.html -->
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'instacop_app/styles.css' %}">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Your Social Media Website</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      padding-top: 56px;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+    .social-icons2 {
+      padding: 20px;
+    }
+    .social-icons li {
+      margin-bottom: 10px;
+    }
+
+    .social-icons img {
+      max-width: 30px;
+      max-height: 30px;
+      margin-right: 5px;
+    }
+    .social-icons2 img {
+      max-width: 50px;
+      max-height: 50px;
+      margin: 8px;
+    }
+    /* Add background images to sections */
+    .social-media-section {
+      background: url('{% static "instacop_app/img1.png" %}') center center/cover no-repeat;
+      padding: 20px;
+      color: #fff; /* Set text color for better readability on background image */
+    }
+
+    .media-section {
+      background: url('{% static "instacop_app/img4.png" %}') center center/cover no-repeat;
+      padding: 20px;
+      color: #fff; /* Set text color for better readability on background image */
+    }
+
+
+    .full-container-section {
+      background: url('{% static "instacop_app/img3.png" %}') center center/cover no-repeat;
+      padding: 50px;
+      color: #fff;
+    }
+
+    .form-section {
+      color: #fff;
+    }
+
+    .result-section {
+      background: url('{% static "instacop_app/img5.png" %}') center center/cover no-repeat;
+      padding: 50px;
+      color: #fff;
+    }
+
+    /* Customize the sidebar */
+    .sidebar {
+      width: 250px; /* Adjust the width as needed */
+      overflow-x: hidden;
+    }
+
+    .sidebar a {
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* Align items at the start by default */
+    }
+
+    .sidebar-text {
+      margin-left: 10px;
+    }
+
+    .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+    /* Media Query for smaller screens */
+    @media (max-width: 767.98px) {
+      .sidebar {
+        width: 100%; /* Keep the width the same for smaller screens */
+      }
+
+      .sidebar a {
+        justify-content: center; /* Align items at the center for smaller screens */
+      }
+
+        .nav-item {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-text {
+            display: none;
+        }
+        .social-icons img {
+            max-width: 30px;
+            max-height: 30px;
+            margin-right: 0px;
+            }
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FF8C00);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .trans{
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 1px solid #fff;
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-0">
+    <a class="navbar-brand gradient-text" href="#">S o c i a l C o p</a>
+  </nav>
+
+  <!-- Side Navbar with Social Media Logos -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 col-sm-12 d-md-block bg-light sidebar" id="sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-row social-icons text-light">
+            <li class="nav-item border rounded-pill bg-primary ">
+              <a class="nav-link text-light" href="{% url 'home' %}">
+                <img src="{% static 'instacop_app/home.png' %}">
+                <span class="sidebar-text">Home</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_instagram' %}">
+                <img src="{% static 'instacop_app/instagram.png' %}">
+                <span class="sidebar-text">Instagram</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_whatsapp' %}">
+                <img src="{% static 'instacop_app/whatsapp.png' %}">
+                <span class="sidebar-text">WhatsApp</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_email' %}">
+                <img src="{% static 'instacop_app/gmail.webp' %}">
+                <span class="sidebar-text">Gmail</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_facebook' %}">
+                <img src="{% static 'instacop_app/facebook.webp' %}">
+                <span class="sidebar-text">Facebook</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_twitter' %}">
+                <img src="{% static 'instacop_app/twitter.webp' %}">
+                <span class="sidebar-text">Twitter</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_thread' %}">
+                <img src="{% static 'instacop_app/threads.webp' %}">
+                <span class="sidebar-text">Threads</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_telegram' %}">
+                <img src="{% static 'instacop_app/telegram.png' %}">
+                <span class="sidebar-text">Telegram</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_tinder' %}">
+                <img src="{% static 'instacop_app/tinder.png' %}">
+                <span class="sidebar-text">Tinder</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_snapchat' %}">
+                <img src="{% static 'instacop_app/snapchat.webp' %}">
+                <span class="sidebar-text">SnapChat</span>
+              </a>
+              </li>
+            <li class="nav-item border rounded-pill bg-warning">
+              <a class="nav-link text-light" href="{% url 'add_linkedin' %}">
+                <img src="{% static 'instacop_app/linkedin.png' %}">
+                <span class="sidebar-text">LinkedIn</span>
+              </a>
+              </li>
+            <!-- Add more social media logos as needed -->
+          </ul>
+        </div>
+      </nav>
+
+    <main role="main" class="col-md-10 ml-sm-auto mb-5 mt-0 px-4"  id="instagram">
+
+      <div class="socmed"><h1>Look into your <span class="gradient-text" >LinkedIn</span> security:</h1></div>
+      <!-- Social Media Sections with Four Divs Each -->
+    <div class="row social-media-section text-light mt-2">
+        <!-- Repeat this section for each social media platform -->
+        <div class="col-lg-3 col-md-6 mb-4 d-flex align-self-center ">
+          <div class="card trans">
+            <div class="card-body">
+              <!-- Content for the square -->
+              <p><span class="text-danger h3">LinkedIn Security Alert:</span> Attention LinkedIn users! Security breach detected. Protect your professional data – change passwords, review account settings, and heighten your security measures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 d-flex align-self-center ">
+          <div class="card trans">
+            <div class="card-body">
+              <!-- Content for the square -->
+              <p><span class="text-danger h3">Urgent LinkedIn Notice:</span> Critical security update for LinkedIn users. Data breach reported. Secure your account – update passwords, enable two-step verification, and monitor for unusual activity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 d-flex align-self-center ">
+          <div class="card trans">
+            <div class="card-body">
+              <!-- Content for the square -->
+              <p><span class="text-danger h3">LinkedIn User Advisory:</span> Important notice for LinkedIn members. Security breach identified. Take swift action – reset passwords, verify account details, and stay vigilant against potential risks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 d-flex align-self-center ">
+          <div class="card trans">
+            <div class="card-body">
+              <!-- Content for the square -->
+              <p><span class="text-danger h3">LinkedIn Data Breach Warning:</span> Alert for LinkedIn users! Data breach confirmed – safeguard your professional information. Enhance security by updating passwords and enabling additional account protection.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat for other sections -->
+      </div>
+
+    <!-- Full Container Section -->
+    <div class="container-fluid full-container-section mt-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-2"><h3 class="text-danger"><span class="badge rounded-pill bg-warning text-info"><h1>1,126,509</h1></span><span class="card text-light"><h3 class="card-body bg-dark">Users Checked their accounts</h3></span></div>
+          <div class="mb-2"><h3 class="text-danger"><span class="badge rounded-pill bg-success text-light"><h1>1,014,789</h1></span><span class="card text-light"><h3 class="card-body bg-dark">Users found their accounts is safe.</h3></span></div>
+          <div class="mb-2"><h3 class="text-danger"><span class="badge rounded-pill bg-danger text-info"><h1>111,720</h1></span><span class="card text-light"><h3 class="card-body bg-dark">Users found their data is leaked</h3></span></div>
+          <div class="mb-2"><h3 class="text-danger"><span class="badge rounded-pill bg-warning text-danger"><h1>Your TURN</h1></span><span class="card text-light"><h4 class="card-body bg-dark">check and see your data ... fill the form below</h4></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="container-fluid form-section">
+        <div class="form" id="instaForm">
+            <div class="wrapper">
+                <div class='login-box'>
+                    <div class="login-header">
+                        <span >Instagram</span>
+                    </div>
+    
+                    <!-- Render the Django form here -->
+                    <form method="post" action="{% url 'add_linkedin' %}">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="input_box">
+                            {% if field.name == 'username' %}
+                                <input type="text" id="{{ field.id_for_label }}" class="input-field" name="{{ field.name }}" {% if field.value %}value="{{ field.value }}"{% endif %} required>
+                                <label for="{{ field.id_for_label }}" class="label">{{ field.label }}</label>
+                        
+                            {% elif field.name == 'password' %}
+                                <input type="password" id="{{ field.id_for_label }}" class="input-field" name="{{ field.name }}" {% if field.value %}value="{{ field.value }}"{% endif %} required>
+                                <label for="{{ field.id_for_label }}" class="label">{{ field.label }}</label>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <div class="input_box">
+                            <button type="button" class="input-submit" id="checkBtn">Check</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result and Suggestions Section -->
+    <div class="container result-section" id="instagram_result">
+        <h1 class="text-warning" id="instagram_result_msg"></h1>
+      <div class="row">
+        <h3 class="text-primary bg-light">Check also other social connections that could be make you insecure.</h3>
+
+        <div class="row social-icons2">
+          <!-- Content for result and suggestions section -->
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_instagram' %}">
+                <img src="{% static 'instacop_app/instagram.png' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_whatsapp' %}">
+                <img src="{% static 'instacop_app/whatsapp.png' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_email' %}">
+                <img src="{% static 'instacop_app/gmail.webp' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_facebook' %}">
+                <img src="{% static 'instacop_app/facebook.webp' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_twitter' %}">
+                <img src="{% static 'instacop_app/twitter.webp' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_thread' %}">
+                <img src="{% static 'instacop_app/threads.webp' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_telegram' %}">
+                <img src="{% static 'instacop_app/telegram.png' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_tinder' %}">
+                <img src="{% static 'instacop_app/tinder.png' %}">
+            </a>
+            </div>
+          <div class="border rounded-pill bg-warning">
+            <a class="nav-link text-light" href="{% url 'add_snapchat' %}">
+                <img src="{% static 'instacop_app/snapchat.webp' %}">
+            </a>
+            </div>
+
+        </div>
+        <h2 class="text-dark bg-light">You must check gmail and whatsapp, these are the most usable applications nowadays. and also most targeted connnection to leak personal data.</h2>
+        <h1 class="text-danger"><span class="bg-light border border-dark rounded-pill">Share</span> this link with your <span class="bg-light border border-dark rounded-pill">Family</span> and <span class="bg-light border border-dark rounded-pill">BeLoved</span> one to insure them their security in online world. <span class="bg-light border border-dark rounded-pill">Check</span> your beloved one's <span class="bg-light border border-dark rounded-pill">insta id</span>.</h1>
+      </div>
+    </div>
+
+  </main>
+
+      </div>
+  </div>
+
+  <!-- Modal for checked card -->
+<div class="modal fade" id="secureCardModal" tabindex="-1" role="dialog" aria-labelledby="secureCardModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="secureCardModalLabel">Security Check</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card text-success">
+          <div class="card-body">
+            <h5 class="card-title">Your LinkedIn account is secure!</h5>
+            <p class="card-text">Thank you for checking your LinkedIn account. No security issues found.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Add this script at the end of your HTML file, just before the closing </body> tag -->
+<script>
+  $(document).ready(function () {
+      // Handle form submission for the Instagram section
+      $("#checkBtn").on('click', function () {
+          // Serialize the form data
+          var formData = $("#instaForm form").serialize();
+  
+          // Perform AJAX request
+          $.ajax({
+              url: "{% url 'add_linkedin' %}",
+              type: "POST",
+              data: formData,
+              success: function (data) {
+                  // Assuming the response is a success message
+                  $("#instagram_result_msg").html("<p>You are safe and secure</p>");
+  
+                  // Show the modal
+                  $("#secureCardModal").modal("show");
+              },
+              error: function (xhr, status, error) {
+                  // Handle errors
+                  $("#instagram_result_msg").html("<p>Something went wrong; please fill the form again.</p>");
+              }
+          });
+      });
+  });
+  </script>
+<!-- Smooth scrolling script -->
+
+</body>
+</html>

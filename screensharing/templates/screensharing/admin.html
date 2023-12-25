@@ -1,0 +1,29 @@
+<!-- screensharing/templates/screensharing/admin.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Screen Sharing</title>
+</head>
+<body>
+    <h1>Admin - Screen Sharing</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Session ID</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in sessions %}
+                <tr>
+                    <td>{{ session.session_id }}</td>
+                    <td><a href="{% url 'screen_share' room_name=session.session_id %}" target="_blank">Join Screen Share</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+:root{
+    --primary-color: #c6c3c3;
+    --secondary-color: #ffffff;
+    --black-color: #000000;
+}
+
+.scroll{
+    font-family: 'Montserrat';
+    background: #1e293b;
+    color: #f8fafc;
+
+}
+
+.app{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+
+}
+
+@media (min-width: 600px){
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    background-image: url('bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+
+}
+
+.form{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box{
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--secondary-color);
+}
+
+.login-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    width: 140px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+
+.login-header span {
+    font-size: 30px;
+    color: var(--black-color);
+}
+
+.login-header::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+}
+
+.login-header::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+}
+.iconimg {
+    width: 100px;
+    
+}
+.input-field:focus ~ .label,
+.input-field:valid ~ .label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 0 10px;
+    background-color: var(--secondary-color);
+    color: #000000;
+
+}
+
+.icon{
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+}
+
+.input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input-field {
+    width: 100%;
+    height: 55px;
+    font-size: 26px;
+    background: transparent;
+    color: var(--secondary-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+}
+
+#id_username{
+    margin-bottom: 10px;
+
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: .2s;
+}
+
+.input-submit {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 3s;
+}
+
+.input-submit:hover {
+    background: var(--secondary-color);
+
+}
+
+.register {
+    text-align: center;
+}
+
+.register a{
+    font-weight: 500;
+}
+
+.info-box{
+    width: 300px;
+    height: 300px;
+    float: left;
+    align-items: center;
+    align-self: center;
+    
+    background-color: #1e293b;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #f8fafc;
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.infowrap{
+    padding: 10px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    
+}
+
+@media only screen and (max-width: 564px) {
+    .wrapper{
+        padding: 20px;
+    }
+    .login-box {
+        width: 100%;
+        padding: 7.5em 1.5em 4em 1.5em;
+    }
+}
+
+body {
+    padding-top: 56px;
+  }
+
+
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-icons li {
+    margin-bottom: 10px;
+  }
+
+  .social-icons img {
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 10px;
+  }
+
+  /* Add background images to sections */
+  .social-media-section {
+    background: url('{% static "instacop_app/img5.png" %}') center center/cover no-repeat;
+    padding: 20px;
+    color: #fff; /* Set text color for better readability on background image */
+  }
+
+  .media-section {
+    background: url('{% static "instacop_app/img4.png" %}') center center/cover no-repeat;
+    padding: 20px;
+    color: #fff; /* Set text color for better readability on background image */
+  }
+
+
+  .full-container-section {
+    background: url('{% static "instacop_app/img3.png" %}') center center/cover no-repeat;
+    padding: 50px;
+    color: #fff;
+  }
+
+  .form-section {
+    background: url('{% static "path/to/form-section-background.jpg" %}') center center/cover no-repeat;
+    padding: 50px;
+    color: #fff;
+  }
+
+  .result-section {
+    background: url('{% static "instacop_app/img1.png" %}') center center/cover no-repeat;
+    padding: 50px;
+    color: #fff;
+  }
+
+  /* Customize the sidebar */
+  .sidebar {
+    width: 250px; /* Adjust the width as needed */
+    overflow-x: hidden;
+  }
+
+  .sidebar a {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items at the start by default */
+  }
+
+  .sidebar-text {
+    margin-left: 10px;
+  }
+
+
+
+  
+/* Media Query for smaller screens */
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 250px; /* Keep the width the same for smaller screens */
+    }
+
+    .sidebar a {
+        justify-content: center; /* Align items at the center for smaller screens */
+    }
+}
