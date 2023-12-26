@@ -6,8 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('instacop/', include('instacop_app.urls')),
-    path('screenshare/', include('screensharing.urls')),
+    path('', include('instacop_app.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

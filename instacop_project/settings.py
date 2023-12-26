@@ -70,9 +70,9 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'instacop_project.wsgi.application'
+WSGI_APPLICATION = 'instacop_project.wsgi.application'
 # Use channels layer as the default backend for Django
-ASGI_APPLICATION = 'instacop_project.asgi.application'
+#ASGI_APPLICATION = 'instacop_project.asgi.application'
 
 # Configure channels layers to use Redis
 CHANNEL_LAYERS = {
@@ -130,6 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media files (user-uploaded content)
+# Update the 'MEDIA_URL' and 'MEDIA_ROOT' settings as needed
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
