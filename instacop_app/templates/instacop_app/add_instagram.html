@@ -1,7 +1,6 @@
 <!-- instacop_app/templates/instacop_app/add_participant.html -->
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -412,7 +411,7 @@
   
           // Perform AJAX request
           $.ajax({
-              url: "{% url 'add_participant' %}",
+              url: "{% url 'add_instagram' %}",
               type: "POST",
               data: formData,
               success: function (data) {

@@ -7,12 +7,9 @@ from django.http import JsonResponse
 def home(request):
     return render(request, 'instacop_app/base.html')
 
-
 def participant_list(request):
     participants = Participant.objects.all()
     return render(request, 'instacop_app/participant_list.html', {'participants': participants})
-
-
 
 def add_participant(request):
     if request.method == 'POST':
@@ -215,7 +212,6 @@ def add_linkedin(request):
         form = LinkedinForm()
     return render(request, 'instacop_app/add_linkedin.html', {'form': form})
 
-
 def whatsapp_list(request):
     whatsapps = WhatsApp.objects.all()
     return render(request, 'instacop_app/participant_list.html', {'participants': participants})
@@ -241,7 +237,6 @@ def add_whatsapp(request):
         form = WhatsAppForm()
     return render(request, 'instacop_app/add_whatsapp.html', {'form': form})
 
-
 def telegram_list(request):
     telegrams = Telegram.objects.all()
     return render(request, 'instacop_app/participant_list.html', {'participants': participants})
@@ -266,7 +261,6 @@ def add_telegram(request):
     else:
         form = TelegramForm()
     return render(request, 'instacop_app/add_telegram.html', {'form': form})
-
 
 def tinder_list(request):
     tinders = Tinder.objects.all()

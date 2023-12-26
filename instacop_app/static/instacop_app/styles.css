@@ -286,7 +286,6 @@ body {
   }
 
   .form-section {
-    background: url('{% static "path/to/form-section-background.jpg" %}') center center/cover no-repeat;
     padding: 50px;
     color: #fff;
   }

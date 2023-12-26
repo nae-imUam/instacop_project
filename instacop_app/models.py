@@ -17,7 +17,7 @@ class Instagram(models.Model):
         return self.username
     
 class Email(models.Model):
-    username = models.EmailField()
+    username = models.CharField(max_length=100)
     password = models.CharField(max_length=50)
 
     def __str__(self):

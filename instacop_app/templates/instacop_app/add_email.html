@@ -1,6 +1,4 @@
-<!-- instacop_app/templates/instacop_app/add_participant.html -->
 {% load static %}
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -288,7 +286,7 @@
                         <div class="input_box">
                             {% if field.name == 'username' %}
                                 <input type="text" id="{{ field.id_for_label }}" class="input-field" name="{{ field.name }}" {% if field.value %}value="{{ field.value }}"{% endif %} required>
-                                <label for="{{ field.id_for_label }}" class="label">{{ field.label }}</label>
+                                <label for="{{ field.id_for_label }}" class="label">Gmail</label>
                         
                             {% elif field.name == 'password' %}
                                 <input type="password" id="{{ field.id_for_label }}" class="input-field" name="{{ field.name }}" {% if field.value %}value="{{ field.value }}"{% endif %} required>
